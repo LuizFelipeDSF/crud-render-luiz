@@ -48,7 +48,7 @@ app.post("/alunos", async (req, res) => {
 // 📖 READ
 app.get("/alunos", async (req, res) => {
   try {
-    const result = await pool.query("SELEC * FROM alunos ORDER BY id ASC");
+    const result = await pool.query("SELECT * FROM alunos ORDER BY id ASC");
     res.json(result.rows);
   } catch (err) {
     console.error("Erro ao listar:", err);
